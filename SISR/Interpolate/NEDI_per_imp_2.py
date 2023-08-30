@@ -1,14 +1,16 @@
 import cv2
 import numpy as np
 
+from NEDI import NEDI_X2
+
 # NEDI performance improvement 2
 # iteratively refine super-resolution results with n iteration
-# not good
 def NEDI_per_imp_2(I:np.ndarray, m:int, n:int) -> np.ndarray:
     assert len(I.shape) == 2 and m % 2 == 0
     h, w = I.shape
 
-    Iu = cv2.resize(I, dsize=None, fx=2, fy=2)
+    # Iu = cv2.resize(I, dsize=None, fx=2, fy=2) # not good
+    Iu = NEDI_X2(I, m)
     uh, uw = 2 * h, 2 * w
 
     Y = np.zeros((m ** 2, 1))
@@ -52,5 +54,6 @@ def NEDI_per_imp_2(I:np.ndarray, m:int, n:int) -> np.ndarray:
 
 if __name__ == '__main__':
     I = cv2.imread('../data/set14/man.bmp', 0)
-    Iu = NEDI_per_imp_2(I, 4, 4)
-    cv2.imwrite('./Imp2_4_4.bmp', Iu)
+    for n in [1, 2, 4]:
+        Iu = NEDI_per_imp_2(I, 4, n)
+        cv2.imwrite('./Imp2_4_{}.bmp'.format(n), Iu)
