@@ -35,4 +35,4 @@
 
 ## 1. 原始INTR
 1. 原论文是 An Edge-Guided Image Interpolation Algorithm via Directional Filtering and Data Fusion。第一作者张磊
-2. 这里主要实现原论文中的简化版本。核心思想是根据方差自适应调整45°和135°插值结果的权重
+2. 这里主要实现原论文中的简化版本。核心思想是根据方差自适应调整45°和135°插值结果的权重，以达到插值结果主要沿着灰度变化不大方向进行的目的
