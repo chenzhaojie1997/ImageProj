@@ -30,3 +30,9 @@
 
 ## 其他应用
 1. 原论文中提到，这种方法也可以应用在去马赛克任务上，这里先不深入研究，留下个种子。
+
+# INTR
+
+## 1. 原始INTR
+1. 原论文是 An Edge-Guided Image Interpolation Algorithm via Directional Filtering and Data Fusion。第一作者张磊
+2. 这里主要实现原论文中的简化版本。核心思想是根据方差自适应调整45°和135°插值结果的权重
