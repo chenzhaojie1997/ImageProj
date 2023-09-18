@@ -64,12 +64,6 @@ def NEDI_X2(I:np.ndarray, m:int) -> np.ndarray:
                     C[idx, 2] = Iu[2 * yi + 3, 2 * xi - 1]
                     C[idx, 3] = Iu[2 * yi + 1, 2 * xi + 1]
 
-                    # wrong
-                    # Y[idx, 0] = Iu[2 * yi, 2 * xi]
-                    # C[idx, 0] = Iu[2 * yi - 1, 2 * xi - 1]
-                    # C[idx, 1] = Iu[2 * yi + 1, 2 * xi - 1]
-                    # C[idx, 2] = Iu[2 * yi + 1, 2 * xi + 1]
-                    # C[idx, 3] = Iu[2 * yi - 1, 2 * xi + 1]
                     idx += 1
             R = C.T @ C
             r = C.T @ Y
