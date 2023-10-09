@@ -66,5 +66,5 @@ if __name__ == '__main__':
     # Iu = interpolate_Lanczos_type(I, 2)
     # cv2.imwrite('lanczos.bmp', Iu)
 
-    Iu = cv2.resize(I, dsize=None, fx=2, fy=2, cv2.INTER_LANCZOS4)
+    Iu = cv2.resize(I, dsize=None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
     
